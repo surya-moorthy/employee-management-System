@@ -35,6 +35,10 @@ const EmployeeSchema = mongoose.Schema({
           required: [true, 'Last name is required'],
           trim: true,
         },
+        EmployeeId : {
+          type : String,
+          required : [true,"EmployeeId is requires"]
+        },
         email: {
           type: String,
           required: [true, 'Email is required'],
@@ -48,6 +52,7 @@ const EmployeeSchema = mongoose.Schema({
           minlength: [8, 'Password must be at least 8 characters long'],
           select: false, // Prevent password from being returned in queries
         },
+       
         position: {
           type: String,
           required: [true, 'Position is required'],
@@ -61,7 +66,7 @@ const EmployeeSchema = mongoose.Schema({
 })
 
 const User = mongoose.model("User",UserSchema);
-const Employee = mongoose/mongoose.model("Employee",EmployeeSchema);
+const Employee = mongoose.model("Employee",EmployeeSchema);
 
 module.exports = {
     User,

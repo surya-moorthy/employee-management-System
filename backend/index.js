@@ -1,8 +1,9 @@
 const express = require("express");
-const { UserRouter } = require("./router/user");
+const { MainRouter } = require("./router/MainRouter");
+
 const app = express();
 
 app.use(express.json());
-app.use("/employee",UserRouter);
+app.use("/employee",MainRouter);
 
 app.listen(3000);
